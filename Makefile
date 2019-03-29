@@ -38,12 +38,16 @@ env-create:
 #################################################################################
 
 static:
-	python manage.py collectstatic
+	python manage.py collectstatic --noinput
 
-local:
+local-serve: static
 	heroku local
 
+local-open:
+	open http://localhost:5000
 
+deploy:
+	git push heroku master
 
 
 #################################################################################
