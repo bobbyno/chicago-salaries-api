@@ -9,6 +9,6 @@ def index(request):
 
 
 def employees(request):
-    data = settings.DATAFRAME
+    data = settings.SALARY_DATA
     all_employees = data.to_dict(orient='records')
     return JsonResponse(all_employees, safe=False)
